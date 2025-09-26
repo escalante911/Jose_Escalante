@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>One Pager – Selectores CSS | José Luis Escalante</title>
+  <meta name="description" content="One Pager para Etapa 2: fundamentos de HTML y selectores CSS. Incluye secciones: Inicio, Tema, Mockup y Acerca de." />
+  <style>
+    :root{
+      --bg:#0f172a;         /* slate-900 */
+      --card:#111827;       /* gray-900 */
+      --muted:#94a3b8;      /* slate-400 */
+      --text:#e5e7eb;       /* gray-200 */
+      --brand:#60a5fa;      /* blue-400 */
+      --brand-2:#22d3ee;    /* cyan-400 */
+      --accent:#a78bfa;     /* violet-400 */
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:linear-gradient(180deg,var(--bg),#0b1224 60%);color:var(--text);}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 1rem}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(15,23,42,.8);backdrop-filter:saturate(150%) blur(8px);
+      border-bottom:1px solid #1f2937
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.85rem 0}
+    .brand{font-weight:700;letter-spacing:.3px}
+    .brand span{background:linear-gradient(90deg,var(--brand),var(--brand-2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem;flex-wrap:wrap}
+    nav a{padding:.5rem .75rem;border-radius:.65rem;color:var(--muted)}
+    nav a:hover, nav a:focus{outline:none;background:#0b1224;color:#cbd5e1}
+
+    /* Sections */
+    section{padding:4.5rem 0;border-bottom:1px solid #1f2937}
+    h1,h2{line-height:1.1;margin:.2rem 0 1rem}
+    h1{font-size:clamp(1.8rem,3vw,2.4rem)}
+    h2{font-size:clamp(1.4rem,2.4vw,1.9rem)}
+    p{color:#cbd5e1;max-width:75ch}
+    .lead{font-size:1.1rem;color:#d1d5db}
+
+    /* Cards / code blocks */
+    .grid{display:grid;gap:1rem}
+    @media (min-width:900px){.grid{grid-template-columns:1.1fr .9fr}}
+    .card{background:linear-gradient(180deg,#0b1224,#0a1329);border:1px solid #1f2937;border-radius:1rem;padding:1.25rem}
+    pre{margin:0;background:#0a0f1e;border:1px solid #1f2937;border-radius:.75rem;padding:1rem;overflow:auto}
+    code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;font-size:.95rem}
+
+    /* Lists */
+    ul.check{padding-left:1.2rem}
+    ul.check li{margin:.4rem 0}
+    ul.check li::marker{content:"•  ";color:var(--brand)}
+
+    /* Figure */
+    figure{margin:0}
+    figcaption{color:var(--muted);font-size:.9rem;margin-top:.5rem}
+    img{max-width:100%;height:auto;border-radius:.75rem;border:1px solid #1f2937}
+
+    /* Footer */
+    footer{padding:2rem 0;color:var(--muted)}
+    .foot{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+    .pill{border:1px solid #1f2937;border-radius:999px;padding:.25rem .6rem}
+  </style>
+</head>
+<body>
+  <header aria-label="Barra de navegación principal">
+    <div class="container nav">
+      <div class="brand">One Pager · <span>Selectores CSS</span></div>
+      <nav aria-label="Secciones">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#tema">Tema</a></li>
+          <li><a href="#mockup">Mockup</a></li>
+          <li><a href="#acerca">Acerca de</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- INICIO -->
+    <section id="inicio" aria-labelledby="h-inicio">
+      <div class="container">
+        <h1 id="h-inicio">Fundamentos de HTML y Selectores CSS</h1>
+        <p class="lead">Sitio de una sola página (One Pager) que demuestra el uso de etiquetas semánticas (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>), navegación por marcadores y una explicación práctica de los selectores de CSS.</p>
+        <div class="grid" style="margin-top:1.25rem">
+          <article class="card">
+            <h2>Qué verás aquí</h2>
+            <ul class="check">
+              <li>Estructura semántica HTML5 y navegación interna.</li>
+              <li>Resumen de los principales <strong>selectores CSS</strong> con ejemplos.</li>
+              <li>Un <strong>mockup</strong> de la página de inicio diseñado en una herramienta de prototipado.</li>
+            </ul>
+          </article>
+          <aside class="card" aria-label="Ficha técnica">
+            <h2>Ficha técnica</h2>
+            <ul class="check">
+              <li>Editor: Visual Studio Code</li>
+              <li>Archivo único: <code>index.html</code></li>
+              <li>Navegación: anclas internas</li>
+              <li>Última actualización: <time datetime="2025-09-25">25/09/2025</time></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEMA: SELECTORES CSS -->
+    <section id="tema" aria-labelledby="h-tema">
+      <div class="container">
+        <h2 id="h-tema">Tema: Selectores CSS</h2>
+        <p>Los selectores son patrones que indican a qué elementos del documento se aplican las reglas de estilo. A continuación, un resumen de los más usados con ejemplos breves.</p>
+
+        <div class="card" style="margin-top:1rem">
+          <article>
+            <h3>1. Básicos</h3>
+            <ul class="check">
+              <li><strong>Universal</strong> <code>*</code>: selecciona todos los elementos.</li>
+              <li><strong>Tipo</strong> <code>p</code>, <code>h1</code>: por nombre de etiqueta.</li>
+              <li><strong>Clase</strong> <code>.btn</code>: por clase.</li>
+              <li><strong>ID</strong> <code>#hero</code>: por identificador (único en la página).</li>
+            </ul>
+<pre><code>/* Ejemplos */
+* { box-sizing: border-box; }
+p { line-height: 1.6; }
+.btn { padding: .5rem 1rem; }
+#hero { min-height: 50vh; }</code></pre>
+          </article>
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+          <article>
+            <h3>2. De atributo</h3>
+            <ul class="check">
+              <li><code>a[target]</code>: con atributo <code>target</code>.</li>
+              <li><code>input[type="email"]</code>: atributo con valor exacto.</li>
+              <li><code>[data-role^="btn-"]</code>: valor que <em>empieza</em> con texto.</li>
+              <li><code>[aria-label*="cerrar"]</code>: valor que <em>contiene</em> texto.</li>
+            </ul>
+<pre><code>a[target] { text-decoration: underline; }
+input[type="email"] { border: 1px solid #334155; }
+[data-role^="btn-"] { cursor: pointer; }</code></pre>
+          </article>
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+          <article>
+            <h3>3. Combinadores</h3>
+            <ul class="check">
+              <li><strong>Descendiente</strong> <code>ul li</code>: cualquier nivel dentro.</li>
+              <li><strong>Hijo directo</strong> <code>ul &gt; li</code>: un nivel abajo.</li>
+              <li><strong>Hermano adyacente</strong> <code>h2 + p</code>: el primer hermano siguiente.</li>
+              <li><strong>Hermano general</strong> <code>h2 ~ p</code>: todos los hermanos siguientes.</li>
+            </ul>
+<pre><code>ul &gt; li { list-style: disc; }
+h2 + p { margin-top: .25rem; }</code></pre>
+          </article>
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+          <article>
+            <h3>4. Pseudoclases y pseudoelementos</h3>
+            <ul class="check">
+              <li><strong>Pseudoclases</strong>: estado o posición (<code>:hover</code>, <code>:focus</code>, <code>:first-child</code>, <code>:nth-child(2n)</code>).</li>
+              <li><strong>Pseudoelementos</strong>: parte virtual del elemento (<code>::before</code>, <code>::after</code>, <code>::selection</code>).</li>
+            </ul>
+<pre><code>a:hover { opacity: .85; }
+.card::before { content: ""; display:block; }</code></pre>
+          </article>
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+          <article>
+            <h3>5. Especificidad (resumen rápido)</h3>
+            <p>La prioridad de aplicación de estilos (de menor a mayor) suele considerar: selector de tipo &lt; clase &lt; ID &lt; estilos en línea. Evita usar <code>!important</code> salvo casos necesarios.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOCKUP -->
+    <section id="mockup" aria-labelledby="h-mockup">
+      <div class="container">
+        <h2 id="h-mockup">Mockup</h2>
+        <p>Inserta aquí la imagen exportada desde tu herramienta de prototipado (Figma, Balsamiq, draw.io u otra). Reemplaza la ruta del <code>src</code> por el nombre de tu archivo.</p>
+        <figure class="card" style="margin-top:1rem">
+          <img src="Mockup.png" alt="Mockup de la página principal del sitio (reemplazar por tu imagen exportada)" />
+          <figcaption>Ejemplo de ubicación del mockup. Archivo esperado: <code>Mockup.png</code> en la misma carpeta.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ACERCA DE -->
+    <section id="acerca" aria-labelledby="h-acerca">
+      <div class="container">
+        <h2 id="h-acerca">Acerca de</h2>
+        <article class="card">
+          <p><strong>Autor:</strong> José Luis Escalante</p>
+          <p><strong>Correo:</strong> <a href="jlescalante@unadvirtual.edu.co">jlescalante@unadvirtual.edu.co</a></p>
+          <p><strong>Contacto adicional:</strong> Microsoft Teams / WhatsApp</p>
+          <p>Este One Pager se realizó para la Etapa 2 del curso "Diseño de Sitios Web" (UNAD), cumpliendo con la estructura semántica, navegación por anclas y las secciones solicitadas.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container foot">
+      <span class="pill">© <span id="year">2025</span> José Luis Escalante</span>
+      <span class="pill">Última actualización: <time datetime="2025-09-25">25/09/2025</time></span>
+      <span class="pill">One Pager</span>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
